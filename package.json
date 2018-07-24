@@ -1,0 +1,69 @@
+{
+  "name": "babel-plugin-path-chunk-name",
+  "version": "0.0.0-development",
+  "description": "Babel plugin to transform import() with named chunk, and the chunk name is the path",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bloody-ux/babel-plugin-path-chunk-name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bloody-ux/babel-plugin-path-chunk-name/issues"
+  },
+  "homepage": "https://github.com/bloody-ux/babel-plugin-path-chunk-name#readme",
+  "author": "Nada youxiang.lyx@alipay.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --fix ./",
+    "format": "prettier --single-quote --parser=flow --semi=false --write '{src,__tests__,__test-helpers__}/**/*.js' && npm run lint",
+    "precommit": "lint-staged && npm test",
+    "cm": "git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.32",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.32",
+    "@babel/preset-es2015": "^7.0.0-beta.32",
+    "@babel/preset-react": "^7.0.0-beta.32",
+    "@babel/preset-stage-2": "^7.0.0-beta.32",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^8.0.2",
+    "babel-jest": "^21.2.0",
+    "babel-plugin-tester": "^5.0.0",
+    "babylon-options": "^1.1.2",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-flowtype": "^2.32.1",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "husky": "^0.14.1",
+    "jest": "^21.2.1",
+    "lint-staged": "^5.0.0",
+    "prettier": "^1.5.2",
+    "rimraf": "^2.5.4",
+    "semantic-release": "^6.3.6",
+    "travis-github-status": "^1.6.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "prettier --single-quote --parser=flow --semi=false --write",
+        "eslint --fix",
+        "git add"
+      ]
+    },
+    "verbose": true
+  },
+  "dependencies": {
+  }
+}

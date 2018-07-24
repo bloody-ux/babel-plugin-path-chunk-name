@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`await import() should receive a thennable without calling .then 1`] = `
+"
+async ({ page }) => await import(\`../components/\${page}\`);
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+async ({
+  page
+}) => await import(
+/* webpackChunkName: 'components/[request]' */
+\`../components/\${page}\`);
+"
+`;
+
+exports[`dynamic import (string template + relative paths) 1`] = `
+"
+import(\`../../base/\${page}\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'base/[request]' */
+\`../../base/\${page}\`);
+"
+`;
+
+exports[`dynamic import (string template - dynamic at 1st segment) 1`] = `
+"
+import(\`./\${page}\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: '[request]' */
+\`./\${page}\`);
+"
+`;
+
+exports[`dynamic import (string template with multiple nested folders) 1`] = `
+"
+import(\`./base/\${page}/nested/{$another}folder\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'base/[request]' */
+\`./base/\${page}/nested/{$another}folder\`);
+"
+`;
+
+exports[`dynamic import (string template with nested folder) 1`] = `
+"
+import(\`./base/\${page}/nested/folder\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'base/[request]' */
+\`./base/\${page}/nested/folder\`);
+"
+`;
+
+exports[`dynamic import (string template) 1`] = `
+"
+import(\`./base/\${page}\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'base/[request]' */
+\`./base/\${page}\`);
+"
+`;
+
+exports[`import with other webpack magic comment, keep other magic comments and add webpackChunkName 1`] = `
+"
+import(/* webpackPrefetch: true */\\"./Foo\\")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackPrefetch: true , webpackChunkName: 'Foo'*/
+\\"./Foo\\");
+"
+`;
+
+exports[`import with webpackChunkName comment, do nothing 1`] = `
+"
+import(/* webpackChunkName: 'hello' */\\"./Foo\\")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'hello' */
+\\"./Foo\\");
+"
+`;
+
+exports[`static import (string template + relative paths) 1`] = `
+"
+import(\`../../base\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'base' */
+\`../../base\`);
+"
+`;
+
+exports[`static import (string template) 1`] = `
+"
+import(\`./base\`)
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'base' */
+\`./base\`);
+"
+`;
+
+exports[`static import (with file extension) 1`] = `
+"
+import(\\"./Foo.js\\")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'Foo' */
+\\"./Foo.js\\");
+"
+`;
+
+exports[`static import (with relative paths) 1`] = `
+"
+import(\\"../../Foo\\")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'Foo' */
+\\"../../Foo\\");
+"
+`;
+
+exports[`static import 1`] = `
+"
+import(\\"./Foo\\")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'Foo' */
+\\"./Foo\\");
+"
+`;
