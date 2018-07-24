@@ -47,7 +47,9 @@ function updateLeadingComment(argPath) {
   }
 }
 
-module.exports = function pathChunkNamePlugin() {
+module.exports = function pathChunkNamePlugin({ template }) {
+  const importFuncTemplate = template('() => IMPORT')
+
   return {
     name: 'path-chunk-name',
     visitor: {
@@ -55,7 +57,18 @@ module.exports = function pathChunkNamePlugin() {
         if (p[visited]) return
         p[visited] = true
 
-        updateLeadingComment(getImportArgPath(p))
+        const argPath = getImportArgPath(p)
+        updateLeadingComment(argPath)
+
+        // if need to convert to function, use delay mode
+        // convert `import('./Foo')` to `() => import('./Foo')`
+        if (this.opts.delay) {
+          const importFunc = importFuncTemplate({
+            IMPORT: argPath.parent
+          }).expression
+
+          p.parentPath.replaceWith(importFunc)
+        }
       }
     }
   }

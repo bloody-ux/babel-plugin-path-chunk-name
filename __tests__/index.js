@@ -39,7 +39,11 @@ pluginTester({
     'import with webpackChunkName comment, do nothing':
       'import(/* webpackChunkName: \'hello\' */"./Foo")',
     'import with other webpack magic comment, keep other magic comments and add webpackChunkName':
-      'import(/* webpackPrefetch: true */"./Foo")'
+      'import(/* webpackPrefetch: true */"./Foo")',
+    'delay mode': {
+      code: 'import("./Foo")',
+      pluginOptions: { delay: true }
+    }
   }
 })
 

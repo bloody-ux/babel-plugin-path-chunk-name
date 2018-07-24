@@ -14,6 +14,18 @@ async ({
 "
 `;
 
+exports[`delay mode 1`] = `
+"
+import(\\"./Foo\\")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+() => import(
+/* webpackChunkName: 'Foo' */
+\\"./Foo\\");
+"
+`;
+
 exports[`dynamic import (string template + relative paths) 1`] = `
 "
 import(\`../../base/\${page}\`)

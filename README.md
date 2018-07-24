@@ -63,4 +63,23 @@ import(`./base/${page}`)
 import(/* webpackChunkName: 'base/[request]' */`./base/${page}`);
 ```
 
+And if with `delay` opts enabled
+
+```js
+
+import(\\"./Foo\\")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+() => import(/* webpackChunkName: 'Foo' */"./Foo");
+
+```
+
 > For more usages, please find the detail in `./__tests__/index.js`
+
+
+## Options
+
+`delay`： tells whether convert import expression to arrow function.
+
+Say, `import('./xxx')` => `() => import('./xxx')`
