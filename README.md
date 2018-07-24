@@ -10,7 +10,7 @@
   </a>
 
   <a href="https://www.npmjs.com/package/babel-plugin-path-chunk-name">
-    <img src="https://img.shields.io/badge/dependencies-none-brightgreen.svg" alt="Dependencies" />
+    <img src="https://img.shields.io/badge/dependencies-none-brightgreen.svg" alt="No Dependencies" />
   </a>
 </p>
 
