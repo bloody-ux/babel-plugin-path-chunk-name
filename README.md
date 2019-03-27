@@ -83,7 +83,7 @@ import(\\"./Foo\\")
 
 Say, `import('./xxx')` => `() => import(/* webpackChunkName: 'xxx' */'./xxx')`
 
-But since `2.0` version, calling `then` method after importing will ignore `lazy`.
+But since `1.2.0` version, calling `then` method after importing will ignore `lazy`.
 
 Say `import('./xxxx').then(yyyy)` => `import(/* webpackChunkName: 'xxxx'*/'./xxxx').then(yyyy)`
 
