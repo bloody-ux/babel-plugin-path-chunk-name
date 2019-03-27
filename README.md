@@ -77,7 +77,6 @@ import(\\"./Foo\\")
 
 > For more usages, please find the detail in `./__tests__/index.js`
 
-
 ## Options
 
 `delay`： tells whether convert import expression to arrow function.
