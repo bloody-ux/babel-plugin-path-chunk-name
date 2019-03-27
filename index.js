@@ -60,9 +60,15 @@ module.exports = function pathChunkNamePlugin({ template }) {
         const argPath = getImportArgPath(p)
         updateLeadingComment(argPath)
 
+        const grandpaPath = p.parentPath.parentPath
+        // check whether is thenable call
+        const isThenCall = grandpaPath &&
+          grandpaPath.type === 'MemberExpression' &&
+          grandpaPath.node.property.name === 'then'
+
         // if need to convert to function, use delay mode
-        // convert `import('./Foo')` to `() => import('./Foo')`
-        if (this.opts.delay) {
+        // convert `import('./Foo')` to `() => import('./Foo')` and is not `import('./Foo').then`
+        if (!isThenCall && this.opts.delay) {
           const importFunc = importFuncTemplate({
             IMPORT: argPath.parent
           }).expression

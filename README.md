@@ -82,4 +82,9 @@ import(\\"./Foo\\")
 
 `delay`： tells whether convert import expression to arrow function.
 
-Say, `import('./xxx')` => `() => import('./xxx')`
+Say, `import('./xxx')` => `() => import(/* webpackChunkName: 'xxx' */'./xxx')`
+
+But since `2.0` version, calling `then` method after importing will ignore `lazy`.
+
+Say `import('./xxxx').then(yyyy)` => `import(/* webpackChunkName: 'xxxx'*/'./xxxx').then(yyyy)`
+

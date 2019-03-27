@@ -26,6 +26,30 @@ import(\\"./Foo\\")
 "
 `;
 
+exports[`delay mode with then 1`] = `
+"
+import(\\"./Foo\\").then
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'Foo' */
+\\"./Foo\\").then;
+"
+`;
+
+exports[`delay mode with then call 1`] = `
+"
+import(\\"./Foo\\").then()
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+import(
+/* webpackChunkName: 'Foo' */
+\\"./Foo\\").then();
+"
+`;
+
 exports[`dynamic import (string template + relative paths) 1`] = `
 "
 import(\`../../base/\${page}\`)
