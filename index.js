@@ -66,9 +66,16 @@ module.exports = function pathChunkNamePlugin({ template }) {
           grandpaPath.type === 'MemberExpression' &&
           grandpaPath.node.property.name === 'then'
 
+        const hasArrowFunctionParent = grandpaPath &&
+          grandpaPath.type === 'ArrowFunctionExpression' &&
+          grandpaPath.node.body.type === 'CallExpression'
+
         // if need to convert to function, use delay mode
-        // convert `import('./Foo')` to `() => import('./Foo')` and is not `import('./Foo').then`
-        if (!isThenCall && this.opts.delay) {
+
+        // convert `import('./Foo')` to `() => import('./Foo')`
+        // and is not `import('./Foo').then`
+        // and is not `() => import('./Foo')
+        if (!isThenCall && !hasArrowFunctionParent && this.opts.delay) {
           const importFunc = importFuncTemplate({
             IMPORT: argPath.parent
           }).expression

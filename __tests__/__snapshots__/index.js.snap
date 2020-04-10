@@ -26,6 +26,30 @@ import(\\"./Foo\\")
 "
 `;
 
+exports[`delay mode with delay 1`] = `
+"
+() => import(\\"./Foo\\")
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+() => import(
+/* webpackChunkName: 'Foo' */
+\\"./Foo\\");
+"
+`;
+
+exports[`delay mode with delay and then 1`] = `
+"
+() => import(\\"./Foo\\").then
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+() => import(
+/* webpackChunkName: 'Foo' */
+\\"./Foo\\").then;
+"
+`;
+
 exports[`delay mode with then 1`] = `
 "
 import(\\"./Foo\\").then
