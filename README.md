@@ -87,3 +87,5 @@ But since `1.2.0` version, calling `then` method after importing will ignore `la
 
 Say `import('./xxxx').then(yyyy)` => `import(/* webpackChunkName: 'xxxx'*/'./xxxx').then(yyyy)`
 
+And since `1.3.0` version, if import is already in delay mode, say `() => import('./foo')`， `delay` will do nothing.
+
