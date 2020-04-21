@@ -50,6 +50,20 @@ exports[`delay mode with delay and then 1`] = `
 "
 `;
 
+exports[`delay mode with delay function 1`] = `
+"
+function xx(){ return import(\\"./Foo\\");}
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+function xx() {
+  return import(
+  /* webpackChunkName: 'Foo' */
+  \\"./Foo\\");
+}
+"
+`;
+
 exports[`delay mode with then 1`] = `
 "
 import(\\"./Foo\\").then
