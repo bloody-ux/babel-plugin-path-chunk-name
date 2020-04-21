@@ -52,6 +52,10 @@ pluginTester({
       code: 'function xx(){ return import("./Foo");}',
       pluginOptions: { delay: true }
     },
+    'async delay mode': {
+      code: 'async(import("./Foo"))',
+      pluginOptions: { delay: true }
+    },
     'delay mode with then': {
       code: 'import("./Foo").then',
       pluginOptions: { delay: true }

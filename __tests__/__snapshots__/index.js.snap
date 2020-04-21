@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`async delay mode 1`] = `
+"
+async(import(\\"./Foo\\"))
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+async(() => import(
+/* webpackChunkName: 'Foo' */
+\\"./Foo\\"));
+"
+`;
+
 exports[`await import() should receive a thennable without calling .then 1`] = `
 "
 async ({ page }) => await import(\`../components/\${page}\`);
