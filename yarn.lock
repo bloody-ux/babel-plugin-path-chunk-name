@@ -103,7 +103,7 @@
   dependencies:
     "@babel/types" "7.0.0-beta.32"
 
-"@babel/helper-module-imports@7.0.0-beta.32", "@babel/helper-module-imports@^7.0.0-beta.32":
+"@babel/helper-module-imports@7.0.0-beta.32":
   version "7.0.0-beta.32"
   resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.0.0-beta.32.tgz#8126fc024107c226879841b973677a4f4e510a03"
   dependencies:
@@ -3734,8 +3734,8 @@ meow@^3.3.0:
     trim-newlines "^1.0.0"
 
 merge@^1.1.3, merge@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.0.tgz#7531e39d4949c281a66b8c5a6e0265e8b05894da"
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
 
 micromatch@^2.1.5, micromatch@^2.3.11, micromatch@^2.3.7:
   version "2.3.11"
