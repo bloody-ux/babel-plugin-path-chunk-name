@@ -46,7 +46,7 @@
     "lint-staged": "^5.0.0",
     "prettier": "^1.5.2",
     "rimraf": "^2.5.4",
-    "semantic-release": "^6.3.6",
+    "semantic-release": "^17.2.3",
     "travis-github-status": "^1.6.1"
   },
   "config": {
